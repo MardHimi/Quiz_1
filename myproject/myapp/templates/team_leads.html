@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><!DOCTYPE html>
+    <title>Team Leads</title>
+</head>
+<body>
+    <h1>Team Leads</h1>
+    {% for team_lead in team_leads %}
+        <p>{{ team_lead.name }} {{ team_lead.surname }}</p>
+        <ul>
+            {% for employee in employees.filter(team_lead=team_lead) %}
+                <li>{{ employee.name }} {{ employee.surname }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+</body>
+</html>

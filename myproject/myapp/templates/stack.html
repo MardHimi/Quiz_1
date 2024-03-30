@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><!DOCTYPE html>
+    <title>Stacks</title>
+</head>
+<body>
+    <h1>Stacks</h1>
+    {% for stack in stacks %}
+        <h2>{{ stack.stack }}</h2>
+        {% for employee in employees.filter(stack=stack.stack) %}
+            <p>{{ employee.name }} {{ employee.surname }}</p>
+        {% endfor %}
+        <hr>
+    {% endfor %}
+</body>
+</html>
